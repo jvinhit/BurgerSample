@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Responsive Web</title>
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="wrapper">
+            <h1 class="logo">JVINHIT</h1>
+            <nav>
+                <h2>
+                    Main nagigation
+                </h2>
+                <div id="burger-nav">
+
+                </div>
+                <ul>
+                    <li>
+                        <a href="" class="current">Home</a>
+                    </li>
+                    <li>
+                        <a href="">Journal</a>
+                    </li>
+                    <li>
+                        <a href="">Services</a>
+                    </li>
+                    <li>
+                        <a href="">Feature</a>
+                    </li>
+                    <li>
+                        <a href="">Contact</a>
+                    </li>
+                    <li>
+                        <a href="">About</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script>
+        $("#burger-nav").on("click", function () {
+
+            $("header nav ul").toggleClass("open");
+
+        });
+    </script>
+</body>
+
+</html>
