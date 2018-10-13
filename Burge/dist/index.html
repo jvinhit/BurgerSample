@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Responsive Web</title>
+    <link rel="stylesheet" href="css/combined.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="wrapper">
+            <h1 class="logo">JVINHIT</h1>
+            <div class="search-box">
+                <input class="search-txt" type="text" placeholder="Type to search">
+                <a href="#" class="search-btn">
+                    <i class="fas fa-search"></i>
+                </a>
+            </div>
+            <nav>
+                <h2>
+                    Main nagigation
+                </h2>
+                <div id="burger-nav">
+
+                </div>
+                <ul>
+                    <li>
+                        <a href="" class="current">Home</a>
+                    </li>
+                    <li>
+                        <a href="">Journal</a>
+                    </li>
+                    <li>
+                        <a href="">Services</a>
+                    </li>
+                    <li>
+                        <a href="">Feature</a>
+                    </li>
+                    <li>
+                        <a href="">Contact</a>
+                    </li>
+                    <li>
+                        <a href="">About</a>
+                    </li>
+                    <li>
+
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="main-wrapper">
+        <div class="box-model">
+
+        </div>
+    </div>
+    <footer class="footer">
+        <h2>Footer</h2>
+    </footer>
+    <script>
+        const getElements = (selector) => {
+            return Array.from(document.querySelectorAll(selector));
+        }
+        const getElementById = (selector) => {
+            return document.getElementById(selector);
+        }
+        const toggleClass = (element) => {
+            return (className) => {
+                element.classList.toggle(className);
+                return element;
+            }
+        }
+        getElementById('burger-nav').addEventListener('click', (e) => {
+            getElements('header nav ul').map(toggleClass).map(className => className('open'));
+        });
+
+    </script>
+    <script src="js/vendor.min.js"></script>
+</body>
+
+</html>

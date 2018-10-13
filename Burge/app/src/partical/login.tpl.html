@@ -1,0 +1,30 @@
+<div class="login-wrapper">
+    <div class="login-content">
+        <h2 class="login-header">Login</h2>
+        <form class="form-wrapper" name="form" ng-submit="vm.submitLogin()" novalidate>
+            <div class="form-item">
+                <input ng-model="vm.user.username" class="input__name" type="text" placeholder="Email" ng-minlength="3"
+                    ng-maxlength="15" name="username" required>
+                <label class="label__name" for="name">Username</label>
+                <label ng-show="!form.username.$pristine && !form.username.$valid" class="label__error" for="label__error">error</label>
+            </div>
+            <div class="form-item">
+                <input ng-model="vm.user.email" class="input__email" type="email" placeholder="email" required>
+                <label class="label__name" for="name">Email</label>
+                <label class="label__error" for="label__error">Validate Messaage</label>
+            </div>
+            <div class="form-item">
+                <input ng-model="vm.user.password" class="input__password" type="password" placeholder="asdasdsd"
+                    required>
+                <label class="label__name" for="name">Password</label>
+                <label class="label__error" for="label__error">Validate Messaage</label>
+            </div>
+            <button type="submit" ng-disabled="form.$invalid">
+                <span>
+                    Login
+                </span>
+            </button>
+            {{ form.username.$prestine }}
+        </form>
+    </div>
+</div>
