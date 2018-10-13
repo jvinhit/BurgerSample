@@ -1,0 +1,181 @@
+header {
+    font-family: 'Amatic SC', cursive;
+    background: #e7e7e7;
+    padding: 20px 0;
+
+    .wrapper {
+        margin: 0 auto;
+    }
+
+    h1 {
+        margin: 0;
+        float: left;
+        width: 140px;
+        text-transform: uppercase;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    nav {
+        float: right;
+        font-size: 1.5rem;
+
+        h2 {
+            line-height: 0;
+            margin: 0;
+            text-indent: -10000px;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            transition: all 10s;
+        }
+
+        li {
+            list-style-type: none;
+            float: left;
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #4e4e4e;
+            text-transform: uppercase;
+            font-weight: bold;
+
+            &:hover {
+                background: #4f4f4f;
+                color: white;
+            }
+        }
+    }
+
+    &:after {
+        display: block;
+        content: "";
+        clear: both;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header nav {
+        float: none;
+    }
+
+    header nav li {
+        margin-left: 0;
+        width: 16.66%;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    header h1.logo {
+        float: none;
+        margin: 0 auto 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header nav li {
+        float: none;
+        width: 100%;
+        margin: 0;
+    }
+
+    header nav {
+        background: #555;
+    }
+
+    header .wrapper {
+        padding: 0;
+        width: 100%;
+    }
+
+    header {
+        padding-bottom: 0;
+    }
+
+    header nav li a {
+        display: block;
+        text-align: center;
+        padding: 10px;
+        color: #999;
+        border-top: 1px solid #4f4f4f;
+    }
+
+    #burger-nav {
+        width: 100%;
+        height: 40px;
+        background: url(../images/burger.png) no-repeat 98% center;
+        cursor: pointer;
+    }
+
+    header nav ul {
+        height: 0;
+        overflow: hidden;
+    }
+
+    header nav ul.open {
+        height: auto;
+    }
+}
+
+/* Search box */
+.search-box {
+    position: absolute;
+    background-color: #2c3e50;
+    height: 30px;
+    padding: 5px;
+    box-sizing: content-box;
+    border-radius: 40px;
+    display: inline-block;
+
+    &:hover > .search-txt {
+        width: 240px;
+        padding: 0 10px;
+    }
+
+    .search-btn {
+        color: #16a085;
+        float: right;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+    }
+
+    svg-inline--fa {
+        font-size: 11px;
+    }
+
+    .search-txt {
+        border: none;
+        background: none;
+        outline: none;
+        color: #16a085;
+        float: left;
+        font-size: 11px;
+        transition: 0.4s;
+        padding: 0;
+        line-height: 30px;
+        width: 0px;
+    }
+}
+
+.main-wrapper {
+    position: relative;
+    min-height: calc(100vh - 151px);
+}
+
+.footer {
+    font-family: 'Amatic SC', cursive;
+    height: 70px;
+    text-align: center;
+    font-size: 30px;
+    color: #2980b9;
+    background: #e7e7e7;
+}

@@ -1,0 +1,37 @@
+$font-path: "../fonts/" !default;
+
+@function font_path($file) {
+    @return url($font-path + $file);
+}
+
+/// Roboto
+@font-face {
+    font-family: 'Roboto-Light';
+    src: font_path("Roboto-Light.woff2") format("woff2"), font_path("Roboto-Light.woff") format("woff"), font_path("Roboto-Light.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+/*** Roboto-Regular Rergular ***/
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: font_path("Roboto-Regular.woff2") format("woff2"), font_path("Roboto-Regular.woff") format("woff"), font_path("Roboto-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+/*** Roboto-Regular Medium ***/
+@font-face {
+    font-family: 'Roboto-Medium';
+    src: font_path("Roboto-Medium.woff2") format("woff2"), font_path("Roboto-Medium.woff") format("woff"), font_path("Roboto-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+/*** Roboto-Regular Bold ***/
+@font-face {
+    font-family: 'Roboto-Bold';
+    src: font_path("Roboto-Bold.woff2") format("woff2"), font_path("Roboto-Bold.woff") format("woff"), font_path("Roboto-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}

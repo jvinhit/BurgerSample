@@ -1,0 +1,169 @@
+@import "variable";
+
+$input_font_size: 13px;
+
+.login-wrapper {
+    font-family: $global_font_family;
+    height: 100%;
+    background: linear-gradient(to right, #ff9e2c 0%, #ff9e2c 50%, #b6701e 50%, #b6701e 100%);
+    box-sizing: border-box;
+
+    &:before {
+        content: "";
+        background: #16a085;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 50%;
+        right: 0;
+        filter: blur(5px);
+    }
+
+    &:after {
+        content: "";
+        background: #f39c12;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        filter: blur(5px);
+    }
+
+    .login-content {
+        background-color: white;
+        position: absolute;
+        width: 400px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        padding: 20px 25px;
+        box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.808);
+
+        .login-header {
+            text-align: center;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: $color_header;
+        }
+
+        .form-wrapper {
+            .form-item {
+                position: relative;
+                width: 100%;
+                padding-top: 20px;
+                padding-bottom: 5px;
+                padding-left: 5px;
+                padding-right: 5px;
+                box-sizing: border-box;
+
+                input {
+                    position: relative;
+                    outline: none;
+                    border: none;
+                    background: none;
+                    border-bottom: 1px solid #ccc;
+                    -webkit-appearance: none;
+                    border-radius: 0;
+                    width: 100%;
+                    background-color: antiquewite;
+                    padding: 5px 0px;
+                    font-family: inherit;
+                    box-sizing: border-box;
+                    z-index: 2;
+                    font-size: $input_font_size;
+                }
+
+                ::-webkit-input-placeholder {
+                    opacity: 0;
+                    transition: inherit;
+                }
+
+                input:focus + .label__name, input:valid + .label__name {
+                    top: 0;
+                    transform: scale(0.8);
+                    color: $color_active;
+                }
+
+                input:focus {
+                    border-bottom: 1px solid $color_active;
+                }
+
+                .label {
+                    font-size: $input_font_size;
+
+                    &__name {
+                        position: absolute;
+                        top: 25px;
+                        transition: 0.2s;
+                        z-index: 1;
+                        color: $place_holder_text;
+                    }
+
+                    &__error {
+                        color: $error_color;
+                    }
+                }
+            }
+
+            button {
+                display: block;
+                margin: 10px auto;
+                padding: 5px 15px;
+                border: none;
+                background: none;
+                border-radius: none;
+                outline: none;
+                box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+                background-color: rgb(16, 108, 200);
+                color: rgba(255, 255, 255, 0.87);
+                cursor: pointer;
+
+                &:not([disabled]):hover {
+                    background-color: rgb(1, 89, 162);
+
+                    span {
+                        padding-right: 25px;
+
+                        &:after {
+                            opacity: 1;
+                            right: 0;
+                        }
+                    }
+                }
+
+                &:not([disabled]):active {
+                    box-shadow: 0 7px 8px 0 rgba(0, 0, 0, 0.4);
+                }
+
+                span {
+                    cursor: pointer;
+                    display: inline-block;
+                    position: relative;
+                    transition: 0.2s;
+
+                    &:after {
+                        content: '\00bb';
+                        position: absolute;
+                        opacity: 0;
+                        top: 0;
+                        right: -20px;
+                        transition: 0.5s;
+                    }
+                }
+
+                &::after {
+                    content: '\00bb';
+                    position: absolute;
+                    opacity: 0;
+                    top: 0;
+                    right: -20px;
+                    transition: 0.5s;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {}

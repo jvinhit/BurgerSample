@@ -2,57 +2,113 @@
 <html lang="en">
 
 <head>
+    <base href="/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Responsive Web</title>
+    <!-- build:css css/combined.css -->
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <link rel="stylesheet" href="./app/assets/css/styles.css">
+    <!-- endbuild -->
 </head>
 
-<body>
-    <header>
-        <div class="wrapper">
-            <h1 class="logo">JVINHIT</h1>
-            <nav>
-                <h2>
-                    Main nagigation
-                </h2>
-                <div id="burger-nav">
+<body ng-app="app" ng-cloak>
+    <loader-directive></loader-directive>
 
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0);" class="closebtn" onclick="closeNav()"></a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+    </div>
+    <div id="main">
+        <header>
+            <div class="wrapper clearfix">
+                <!-- <i class="icon-menu" onclick="toggleNav()"></i> -->
+                <!-- <i class="fas fa-bars icon-menu" onclick="toggleNav()"></i> -->
+                <h1 class="logo" onclick="toggleNav()">JVINHIT</h1>
+                <div class="search-box">
+                    <input class="search-txt" type="text" placeholder="Type to search">
+                    <a href="#" class="search-btn">
+                        <i class="fas fa-search"></i>
+                    </a>
                 </div>
-                <ul>
-                    <li>
-                        <a href="" class="current">Home</a>
-                    </li>
-                    <li>
-                        <a href="">Journal</a>
-                    </li>
-                    <li>
-                        <a href="">Services</a>
-                    </li>
-                    <li>
-                        <a href="">Feature</a>
-                    </li>
-                    <li>
-                        <a href="">Contact</a>
-                    </li>
-                    <li>
-                        <a href="">About</a>
-                    </li>
+                <nav>
+                    <h2>
+                        Main nagigation
+                    </h2>
+                    <div id="burger-nav">
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="" class="current">Home</a>
+                        </li>
+                        <li>
+                            <a href="">Journal</a>
+                        </li>
+                        <li>
+                            <a href="">Services</a>
+                        </li>
+                        <li>
+                            <a href="">Feature</a>
+                        </li>
+                        <li>
+                            <a href="">Contact</a>
+                        </li>
+                        <li>
+                            <a href="">About</a>
+                        </li>
+                        <li>
 
-                </ul>
-            </nav>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div class="main-wrapper" ui-view>
         </div>
-    </header>
-    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+        <footer class="footer">
+            <h2>Footer</h2>
+        </footer>
+    </div>
     <script>
-        $("#burger-nav").on("click", function () {
-
-            $("header nav ul").toggleClass("open");
-
+        const getElements = (selector) => {
+            return Array.from(document.querySelectorAll(selector));
+        }
+        const getElementById = (selector) => {
+            return document.getElementById(selector);
+        }
+        const toggleClass = (element) => {
+            return (className) => {
+                element.classList.toggle(className);
+                return element;
+            }
+        }
+        getElementById('burger-nav').addEventListener('click', (e) => {
+            getElements('header nav ul').map(toggleClass).map(className => className('open'));
         });
+        function toggleNav() {
+            getElementById("mySidenav").classList.toggle('openNav');
+            getElementById("main").classList.toggle('mainNav');
+        }
+
     </script>
+    <!--build:js js/vendor.min.js-->
+    <script src="./bower_components/angular/angular.js"></script>
+    <script src="./bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <!-- endbuild -->
+    <!--build:js js/app.min.js-->
+    <script src="./app/src/app.core.js"></script>
+    <script src="./app/src/app.js"></script>
+
+    <!--d3-->
+    <script src="./app/src/directives/loading.directive.js"></script>
+    <script src="./app/src/d3/d3.controller.js"></script>
+    <script src="./app/src/login/login.controller.js"></script>
+    <!-- endbuild -->
 </body>
 
 </html>

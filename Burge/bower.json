@@ -1,0 +1,20 @@
+{
+  "name": "burge",
+  "description": "Burger menu button sample responsive",
+  "main": "index.js",
+  "authors": [
+    "Vĩnh Nguyễn <jvinhit@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/jvinhit/BurgerSample",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "@uirouter/angularjs#^1.7.5"
+  }
+}

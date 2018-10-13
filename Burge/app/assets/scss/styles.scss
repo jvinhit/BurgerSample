@@ -1,0 +1,63 @@
+@import "core";
+@import "navbar";
+
+.box-model {
+    background: red;
+    padding: 5px;
+    margin: 5px;
+    border: 5px wheat solid;
+    width: 100px;
+    height: 100px;
+    box-sizing: border-box;
+}
+
+@keyframes rotated {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(180deg);
+    }
+}
+
+@keyframes rotateds {
+    from {
+        transform: rotate(180deg);
+    }
+
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+.d3-wrapper {
+    background: #ececec;
+}
+
+.clearfix {
+    &:after {
+        content: '';
+        clear: both;
+        display: table;
+    }
+}
+
+@import "login";
+
+#main {
+    transition: margin-left .5s;
+}
+
+@import "sidebar.scss";
+@import "component/loader.scss";
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
+}
