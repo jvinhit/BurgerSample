@@ -1,5 +1,5 @@
 (function() {
-    angular.module("app").directive("loaderDirective", loaderDirective); // loader-directive
+    angular.module("app").directive("loaderDirective", loaderDirective); // loader-directive :))
     function loaderDirective() {
         return {
             restrict: "AE",
