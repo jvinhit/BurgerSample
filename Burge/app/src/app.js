@@ -32,6 +32,12 @@
                 templateUrl: "./app/src/login/login.tpl.html",
                 controller: "loginController",
                 controllerAs: "vm"
+            })
+            .state("singbysong", {
+                url: "/singbysong",
+                templateUrl: "./app/src/singbysong/singbysong.tpl.html",
+                controller: "SingBySongController",
+                controllerAs: "vm"
             });
     }
     function runBlock() {}

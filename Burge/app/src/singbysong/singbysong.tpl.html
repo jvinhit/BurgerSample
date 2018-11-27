@@ -1,0 +1,17 @@
+<div class="sing-bysong">
+    <div class="sing-bysong--content">
+        <div>
+            <i class="fa fa-search"></i>
+            <input type="text" class="sing-bysong--input" ng-model="vm.songFilterInput">
+            <i class="fa fa-search"></i>
+
+        </div>
+        <div class="list">
+            <ul>
+                <li ng-repeat="item in vm.songs">
+                    <span> {{ item.title }} - {{ item.singer}} - {{ item.publishDate }}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
